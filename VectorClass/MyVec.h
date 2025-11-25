@@ -1,12 +1,7 @@
-//
-// Created by Axe on 24.11.2025.
-//
-
-#ifndef VECTORCLASS_MYVECTOR_H
-#define VECTORCLASS_MYVECTOR_H
+#ifndef MYVEC_H
+#define MYVEC_H
 
 class MyVec {
-private:
     int size;
     int capacity;
     int *elements;
@@ -16,11 +11,19 @@ public:
     ~MyVec();
     MyVec(const MyVec& orig);
     MyVec& operator=(const MyVec& orig);
+    int operator[](int i);
+    int &front();
+
+    MyVec operator+(MyVec& v2);
+    int &back();
+    void quicksort(bool Rev=0, int l=0, int r=-1);
+    ///Rev is for if reversed, aka true for from smallest to biggest
+    int &at(int pos);
+    int *data();
+
     void print();
     void push(int val);
     void pop();
-
-    int operator[](int i);
 };
 
-#endif //VECTORCLASS_MYVECTOR_H
+#endif //MYVEC_H
