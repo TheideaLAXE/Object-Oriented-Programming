@@ -67,8 +67,19 @@ void MyVec::push(int val) {
 }
 
 void MyVec::pop() {
-    if (this->size > 0)
-        this->size--;
+    if (size < 1) return;
+
+    size--;
+    if (capacity>15 && capacity/2 > size) {
+        const int newcap = capacity/2;
+        int *tmp = new int[newcap];
+        for (int i=0; i<size; i++) {
+            tmp[i] = elements[i];
+        }
+        delete [] elements;
+        elements = tmp;
+        capacity = newcap;
+    }
 }
 
 int MyVec::operator[](const int i) {

@@ -15,5 +15,7 @@ int main() {
     int *i = v.data();
     std::cout << *i << "\n";
     std::cout << i[0] << "\n";
+    std::cout << "\n\n";
+    std::cout << v.at(100);
 }
 
