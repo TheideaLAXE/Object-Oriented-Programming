@@ -16,7 +16,7 @@ public:
 
     MyVec operator+(MyVec& v2);
     int &back();
-    void quicksort(bool Rev=0, int l=0, int r=-1);
+    void quicksort(bool Rev=false, int l=0, int r=-1);
     ///Rev is for if reversed, aka true for from smallest to biggest
     int &at(int pos);
     int *data();

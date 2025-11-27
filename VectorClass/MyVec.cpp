@@ -34,6 +34,7 @@ void MyVec::_copy(const MyVec& orig) {
 MyVec::MyVec(const MyVec& orig) {
     _copy(orig);
 }
+
 MyVec& MyVec::operator=(const MyVec& orig) {
     if (this != &orig) {
         delete [] this->elements;
@@ -61,7 +62,6 @@ void MyVec::push(int val) {
         elements = tmp;
         this->capacity = newcap;
     }
-
     this->elements[this->size] = val;
     this->size++;
 }
@@ -108,15 +108,8 @@ int &MyVec::at(const int pos) { //same with operator[]
 }
 
 MyVec MyVec::operator+(MyVec &v2) {
-    if (this->size > v2.size) {
-        MyVec v(this->size, 0);
-        for (int i=0; i<v2.size; i++)           v.at(i)=this->at(i)+v2.at(i);
-        for (int i=v2.size; i<this->size; i++)  v.at(i)=this->at(i);
-        return v;
-    }
-    MyVec v(v2.size, 0);
-    for (int i=0; i<this->size; i++)        v.at(i)=this->at(i)+v2.at(i);
-    for (int i=this->size; i<v2.size; i++)  v.at(i)=v2.at(i);
+    MyVec v (*this);
+    for (int i=0; i<v2.size; i++) v.push(v2.at(i));
     return v;
 }
 
