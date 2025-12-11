@@ -26,8 +26,8 @@ public:
     bool operator==(const Vec& b) const; //impl
     bool operator!=(const Vec& b) const;
     bool operator<(const Vec& b) const; //impl
-    bool operator<=(const Vec& b) const; //impl
-    bool operator>(const Vec& b) const;
+    bool operator<=(const Vec& b) const; 
+    bool operator>(const Vec& b) const; //impl
     bool operator>=(const Vec& b) const;
 
     Vec& operator++();
