@@ -31,9 +31,9 @@ public:
     bool operator>=(const Vec& b) const;
 
     Vec& operator++();
-    Vec& operator++(int);
+    Vec operator++(int);
     Vec& operator--();
-    Vec& operator--(int);
+    Vec operator--(int);
     float operator[](const int idx) const;
     float& operator[](const int idx);
 

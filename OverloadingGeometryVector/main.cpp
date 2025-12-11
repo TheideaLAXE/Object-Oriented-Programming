@@ -64,6 +64,10 @@ int main() {
     v2 = v;
     v2 = v2 + 0.000001f;  // small change
     std::cout << "(v==v2) after tiny change: " << (v==v2) << "\n";
+    std::cout << "\n\n";
+    std::cout << v << "\n";
+    std::cout << ++v << "\n";
+    std::cout << (v++) << "\n";
 
     return 0;
 }

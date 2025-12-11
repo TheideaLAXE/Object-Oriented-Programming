@@ -33,7 +33,7 @@ bool Vec::operator>(const Vec& b)  const { return ~(*this)>~b-e; }
 bool Vec::operator<=(const Vec& b) const { return (*this < b) || (*this == b); }
 bool Vec::operator>=(const Vec& b) const { return (*this > b) || (*this == b); }
 
-Vec& Vec::operator++(int) { //post
+Vec Vec::operator++(int) { //post
     Vec temp(*this);
     this->x++;
     this->y++;
@@ -46,7 +46,7 @@ Vec& Vec::operator++() { //pre
     this->z++;
     return *this;
 }
-Vec& Vec::operator--(int) {
+Vec Vec::operator--(int) {
     Vec temp(*this);
     this->x--;
     this->y--;
